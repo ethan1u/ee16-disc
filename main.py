@@ -22,4 +22,32 @@ def merge_sort(arr,cmp):
 
 # must be in-place sort
 def quick_sort(arr,cmp):
+    leng=len(arr)
+    high=[]
+    low=[]
+    equal=[]
+
+    if(leng>1):
+        piv=arr[0]
+        for i in arr:
+            if ( cmp(i,piv)<0):
+                low.appned (i)
+            elif (cmp(i,piv) ==0):
+                equal.append(i)
+            elif (cmp(i,piv)>0):
+                high.append (i)
+        return quick_sort(low)+equal+quick_sort(high)
+    else:
+        return arr
+
     pass
+
+
+
+def cmp(a,b):
+    if (a<b):
+        return -1
+    if (a>b):
+        return 1
+    if (a==b):
+        return 0
