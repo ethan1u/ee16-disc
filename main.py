@@ -17,7 +17,32 @@ def multi_sort(arr, cmp, method="None"):
 
 
 # must be in-place sort
-def merge_sort(arr,cmp):
+def merge_sort(arr,cmp): 
+    array=arr
+    if (len(array)):
+        half=len(array)//2
+        left=array[:half]
+        right=array[half:]
+        merge_sort(left,cmp)
+        merge_sort(right,cmp)
+        i=j=k=0
+        while (i<len(left) and j<len(right)):
+            if (cmp(left[i],right[j])<0):
+                array[k]=left[i]
+                i+=1
+            else:
+                array[k]=right[j]
+                j+=1
+            k+=1
+        while (i<len(left)):
+            array[k]=left[i]
+            i+=1
+            k+=1
+        while (j<len(right)):
+            array[k]=right[j]
+            j+=1
+            k+=1
+    return array 
     pass
 
 # must be in-place sort
