@@ -45,6 +45,4 @@ def merge_sort(arr,cmp):
     return array 
     pass
 
-# must be in-place sort
-def quick_sort(arr,cmp):
-    pass
+
